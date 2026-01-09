@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Website</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="navbar-top-strip">
+        <p class="navbar-top-text">Experience shopping at its best</p>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar-main-wrapper">
+        <div class="navbar-content-container">
+            <!-- Logo -->
+            <div class="navbar-logo-section">
+                <img src="Images/navlogo.png" alt="The Market Logo" class="navbar-logo-image">
+            </div>
+
+         
+
+            <!-- Navigation Links (Hidden when not logged in on desktop, shown after login) -->
+            <ul class="navbar-menu-links" id="navbarMenuLinks">
+                <li class="navbar-menu-item"><a href="index.html" class="navbar-menu-link navbar-link-active">Home</a></li>
+                <li class="navbar-menu-item"><a href="shop.html" class="navbar-menu-link">Shopping</a></li>
+                <li class="navbar-menu-item"><a href="categories.html" class="navbar-menu-link">Categories</a></li>
+                <li class="navbar-menu-item"><a href="blog.html" class="navbar-menu-link">Blogs</a></li>
+                <li class="navbar-menu-item"><a href="contact.html" class="navbar-menu-link">Contact us</a></li>
+                <li class="navbar-menu-item"><a href="about.html" class="navbar-menu-link">About us</a></li>
+            </ul>
+               <!-- Search Bar -->
+            <div class="navbar-search-container">
+                <input type="text" class="navbar-search-input" placeholder="Search product category">
+                <button class="navbar-search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Register Button (Shown when NOT logged in) -->
+            <div class="navbar-register-section" id="navbarRegisterSection">
+                <button class="navbar-register-btn" id="navbarRegisterBtn">Register</button>
+            </div>
+
+            <!-- User Actions (Shown when logged in) -->
+            <div class="navbar-user-actions" id="navbarUserActions">
+                <!-- User Profile -->
+                <div class="navbar-user-profile-wrapper" id="navbarUserProfileWrapper">
+                    <img src="Images/user.png" alt="User Profile" class="navbar-user-avatar" id="navbarUserAvatar">
+                    
+                    <!-- User Dropdown Menu -->
+                    <div class="navbar-user-dropdown" id="navbarUserDropdown">
+                        <div class="navbar-dropdown-header">
+                            <h3 class="navbar-dropdown-title">My Accounts</h3>
+                        </div>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-user"></i>
+                                    <span>Personal Information</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <span>My order</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Tracking order</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Password Manager</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link" id="navbarLogoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Wishlist Icon -->
+                <div class="navbar-icon-wrapper">
+                    <a href="like.html" class="navbar-icon-link">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+
+                <!-- Cart Icon -->
+                <div class="navbar-icon-wrapper">
+                    <a href="cart.html" class="navbar-icon-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="navbar-cart-badge">3</span>
+                    </a>
+                </div>
+
+                <!-- Notification Icon -->
+                <div class="navbar-notification-wrapper" id="navbarNotificationWrapper">
+                    <button class="navbar-icon-link navbar-notification-trigger" id="navbarNotificationTrigger">
+                        <i class="far fa-bell"></i>
+                        <span class="navbar-notification-dot"></span>
+                    </button>
+
+                    <!-- Notification Dropdown -->
+                    <div class="navbar-notification-dropdown" id="navbarNotificationDropdown">
+                        <div class="navbar-notification-header">
+                            <h3 class="navbar-notification-title">Order Updates</h3>
+                            <button class="navbar-notification-close" id="navbarNotificationClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <ul class="navbar-notification-list">
+                            <li class="navbar-notification-item">
+                                <span class="navbar-notification-bullet">•</span>
+                                <p class="navbar-notification-text">"Your order has been placed successfully! We'll notify you once it's out for delivery."</p>
+                            </li>
+                            <li class="navbar-notification-item">
+                                <span class="navbar-notification-bullet">•</span>
+                                <p class="navbar-notification-text">"Good news! Your groceries are on the way. Track your delivery in real time."</p>
+                            </li>
+                            <li class="navbar-notification-item">
+                                <span class="navbar-notification-bullet">•</span>
+                                <p class="navbar-notification-text">"Your order has been delivered. Thank you for shopping with us!"</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="navbar-modal-overlay" id="navbarLoginModal">
+        <div class="navbar-modal-container navbar-modal-login">
+            <button class="navbar-modal-close" id="navbarLoginModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="navbar-modal-title">Register Free !</h2>
+            
+            <form class="navbar-modal-form" id="navbarLoginForm">
+                <div class="navbar-form-group">
+                    <input type="email" class="navbar-form-input" placeholder="Enter your e-mail" required>
+                </div>
+                
+                <div class="navbar-form-group">
+                    <input type="password" class="navbar-form-input" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="navbar-form-submit-btn">Login</button>
+                
+                <a href="#" class="navbar-forgot-password">Forgot your password?</a>
+                
+                <div class="navbar-social-divider">
+                    <span class="navbar-divider-text">Sign Up Using</span>
+                </div>
+                
+                <div class="navbar-social-login">
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                </div>
+                
+                <p class="navbar-modal-footer">
+                    Don't have an account? 
+                    <a href="#" class="navbar-create-account" id="navbarShowSignup">Create New Account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="navbar-modal-overlay" id="navbarSignupModal">
+        <div class="navbar-modal-container navbar-modal-signup">
+            <button class="navbar-modal-close" id="navbarSignupModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="navbar-modal-title">Sign Up</h2>
+            
+            <form class="navbar-modal-form" id="navbarSignupForm">
+                <div class="navbar-form-group">
+                    <input type="text" class="navbar-form-input" placeholder="Full Name" required>
+                </div>
+                
+                <div class="navbar-form-group">
+                    <input type="email" class="navbar-form-input" placeholder="Email" required>
+                </div>
+                
+                <div class="navbar-form-group">
+                    <input type="password" class="navbar-form-input" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="navbar-form-submit-btn">Sign Up</button>
+                
+                <p class="navbar-modal-footer">
+                    Already have an account? 
+                    <a href="#" class="navbar-login-link" id="navbarShowLogin">Log in</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+ 
+   <!-- Hero Banner Section -->
+    <section class="hero-banner-section">
+        <!-- Background Image -->
+        <img src="Images/index hero.png" alt="Fresh Grocery Store" class="hero-background-image">
+        
+        <!-- Dark Overlay -->
+        <div class="hero-overlay-layer"></div>
+        
+        <!-- Content -->
+        <div class="hero-content-wrapper">
+            <div class="hero-text-container">
+                <!-- Main Heading -->
+                <h1 class="hero-main-heading">Explore Fresh & Healthy</h1>
+                
+                <!-- Subheading -->
+                <h2 class="hero-subheading-text">Convenience and Trust your way</h2>
+                
+                <!-- Description -->
+                <p class="hero-description-text">
+                    Your trusted online grocery store for quick, easy, and reliable shopping—freshness delivered within hours.
+                </p>
+                
+                <!-- Buttons -->
+                <div class="hero-buttons-row">
+                    <button class="shop-now-primary-button" onclick="shopNow()">
+                        Shop now
+                        <svg class="button-arrow-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
+                        </svg>
+                    </button>
+                    <button class="enquiry-secondary-button" onclick="window.location.href='enquiry.html'">
+                        Enquiry Furniture
+                    </button>
+                </div>
+                
+                <!-- Customer Reviews -->
+                <div class="customer-reviews-panel">
+                    <!-- Customer Avatars -->
+                    <div class="customer-avatars-group">
+                        <div class="customer-avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Customer 1" class="avatar-profile-image">
+                        </div>
+                        <div class="customer-avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Customer 2" class="avatar-profile-image">
+                        </div>
+                        <div class="customer-avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Customer 3" class="avatar-profile-image">
+                        </div>
+                        <div class="customer-avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Customer 4" class="avatar-profile-image">
+                        </div>
+                        <div class="more-customers-badge">+</div>
+                    </div>
+                    
+                    <!-- Rating Info -->
+                    <div class="rating-info-block">
+                        <div class="rating-score-row">
+                            <span class="rating-star-icon">★</span>
+                            <span class="rating-value-text">4.9k Ratings+</span>
+                        </div>
+                        <p class="customers-count-text">Trusted by 50k customers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <div class="main-content-wrapper">
+        <!-- Features Section -->
+        <section class="features-showcase-section">
+            <h1>Why Choose Us!</h1>
+            <div class="features-cards-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card-item">
+                    <div class="feature-icon-circle">
+                        <img src="Images/index 1.png" alt="Fresh & Handpicked" class="feature-icon-image">
+                    </div>
+                    <h3 class="feature-title-text">Fresh & Handpicked</h3>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card-item">
+                    <div class="feature-icon-circle">
+                        <img src="Images/in 2.png" alt="Fast & Reliable Delivery" class="feature-icon-image">
+                    </div>
+                    <h3 class="feature-title-text">Fast & Reliable Delivery</h3>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card-item">
+                    <div class="feature-icon-circle">
+                        <img src="Images/in 3.png" alt="Affordable Prices" class="feature-icon-image">
+                    </div>
+                    <h3 class="feature-title-text">Affordable Prices</h3>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card-item">
+                    <div class="feature-icon-circle">
+                        <img src="Images/in 4.png" alt="Wide Variety" class="feature-icon-image">
+                    </div>
+                    <h3 class="feature-title-text">Wide Variety</h3>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card-item">
+                    <div class="feature-icon-circle">
+                        <img src="Images/in 5.png" alt="Quality & Trust" class="feature-icon-image">
+                    </div>
+                    <h3 class="feature-title-text">Quality & Trust</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-display-section">
+            <h2 class="categories-section-title">Categories</h2>
+            <div class="categories-items-grid">
+                <!-- Category 1: Vegetables -->
+                <div class="category-card-item" onclick="navigateToCategory('vegetables')">
+                    <div class="category-image-circle">
+                        <img src="Images/c1.png" alt="Vegetables" class="category-display-image">
+                    </div>
+                    <h3 class="category-name-label">Vegetables</h3>
+                </div>
+
+                <!-- Category 2: Fresh fruits -->
+                <div class="category-card-item" onclick="navigateToCategory('fresh-fruits')">
+                    <div class="category-image-circle">
+                        <img src="Images/c2.png" alt="Fresh fruits" class="category-display-image">
+                    </div>
+                    <h3 class="category-name-label">Fresh fruits</h3>
+                </div>
+
+                <!-- Category 3: Milk&egg -->
+                <div class="category-card-item" onclick="navigateToCategory('milk-egg')">
+                    <div class="category-image-circle">
+                        <img src="Images/c3.png" alt="Milk&egg" class="category-display-image">
+                    </div>
+                    <h3 class="category-name-label">Milk&egg</h3>
+                </div>
+
+                <!-- Category 4: Dry fruits -->
+                <div class="category-card-item" onclick="navigateToCategory('dry-fruits')">
+                    <div class="category-image-circle">
+                        <img src="Images/c4.png" alt="Dry fruits" class="category-display-image">
+                    </div>
+                    <h3 class="category-name-label">Dry fruits</h3>
+                </div>
+
+                <!-- Category 5: House hold -->
+                <div class="category-card-item" onclick="navigateToCategory('household')">
+                    <div class="category-image-circle">
+                        <img src="Images/c5.png" alt="House hold" class="category-display-image">
+                    </div>
+                    <h3 class="category-name-label">House hold</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deals Section -->
+        <section class="deals-promotion-section">
+            <h2 class="deals-section-heading">Deals flat 25% off</h2>
+            <div class="deals-cards-container">
+                <!-- Deal Card 1: Fresh vegetables -->
+                <div class="deal-card-wrapper">
+                    <div class="deal-image-container">
+                        <img src="Images/d1.png" alt="Fresh vegetables" class="deal-product-image">
+                    </div>
+                    <div class="deal-content-section">
+                        <p class="deal-description-text">Fresh vegtables have 25% OFF</p>
+                        <button class="shop-now-button" onclick="shopNow('vegetables')">Shop now</button>
+                    </div>
+                </div>
+
+                <!-- Deal Card 2: Fresh fruits -->
+                <div class="deal-card-wrapper">
+                    <div class="deal-image-container">
+                        <img src="Images/d2.png" alt="Fresh fruits" class="deal-product-image">
+                    </div>
+                    <div class="deal-content-section">
+                        <p class="deal-description-text">Fresh fruits have 25% OFF</p>
+                        <button class="shop-now-button" onclick="shopNow('fruits')">Shop now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+      <section class="featured-products-section">
+        <!-- Section Title -->
+        <h2 class="featured-section-title">Featured products</h2>
+
+        <!-- Products Grid -->
+        <div class="featured-products-grid">
+            <!-- Product 1: Fresh Strawberry -->
+            <div class="featured-product-card">
+                <span class="product-discount-badge">20% off</span>
+                <button class="product-wishlist-button" onclick="toggleWishlist(event)">
+                    <svg class="wishlist-heart-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <div class="product-image-wrapper">
+                    <img src="Images/f1.png" alt="Fresh Strawberry" class="product-featured-image">
+                </div>
+                <div class="product-details-wrapper">
+                    <div class="product-category-rating-row">
+                        <span class="product-category-label">Fruits</span>
+                        <div class="product-rating-wrapper">
+                            <span class="rating-star-symbol">★</span>
+                            <span class="rating-score-text">4.5</span>
+                        </div>
+                    </div>
+                    <h3 class="product-name-heading">Fresh Strawberry</h3>
+                    <p class="product-weight-label">500g</p>
+                    <div class="product-price-action-row">
+                        <span class="product-price-text">$56</span>
+                        <button class="product-add-button" onclick="addToCart(event, 'Fresh Strawberry', 56)">
+                            Add
+                            <svg class="add-cart-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Fresh combo -->
+            <div class="featured-product-card">
+                <span class="product-discount-badge">20% off</span>
+                <button class="product-wishlist-button" onclick="toggleWishlist(event)">
+                    <svg class="wishlist-heart-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <div class="product-image-wrapper">
+                    <img src="Images/f2.png" alt="Fresh combo" class="product-featured-image">
+                </div>
+                <div class="product-details-wrapper">
+                    <div class="product-category-rating-row">
+                        <span class="product-category-label">Vegetables</span>
+                        <div class="product-rating-wrapper">
+                            <span class="rating-star-symbol">★</span>
+                            <span class="rating-score-text">4.5</span>
+                        </div>
+                    </div>
+                    <h3 class="product-name-heading">Fresh combo</h3>
+                    <p class="product-weight-label">500g</p>
+                    <div class="product-price-action-row">
+                        <span class="product-price-text">$56</span>
+                        <button class="product-add-button" onclick="addToCart(event, 'Fresh combo', 56)">
+                            Add
+                            <svg class="add-cart-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Fresh lemon -->
+            <div class="featured-product-card">
+                <span class="product-discount-badge">20% off</span>
+                <button class="product-wishlist-button" onclick="toggleWishlist(event)">
+                    <svg class="wishlist-heart-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <div class="product-image-wrapper">
+                    <img src="Images/f3.png" alt="Fresh lemon" class="product-featured-image">
+                </div>
+                <div class="product-details-wrapper">
+                    <div class="product-category-rating-row">
+                        <span class="product-category-label">Fruits</span>
+                        <div class="product-rating-wrapper">
+                            <span class="rating-star-symbol">★</span>
+                            <span class="rating-score-text">4.5</span>
+                        </div>
+                    </div>
+                    <h3 class="product-name-heading">Fresh lemon</h3>
+                    <p class="product-weight-label">500g</p>
+                    <div class="product-price-action-row">
+                        <span class="product-price-text">$56</span>
+                        <button class="product-add-button" onclick="addToCart(event, 'Fresh lemon', 56)">
+                            Add
+                            <svg class="add-cart-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- FAQ Section -->
+    <section class="faq-section-container">
+        <h1 class="faq-section-title">Frequently Asked Questions</h1>
+
+        <div class="faq-items-wrapper">
+            <!-- FAQ Item 1 -->
+            <div class="faq-accordion-item">
+                <div class="faq-question-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question-text">1.) Do you offer free delivery?</h3>
+                    <div class="faq-toggle-icon">
+                        <svg class="arrow-down-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer-content">
+                    <p class="faq-answer-text">
+                        Yes, we offer free standard delivery on all orders above ₹5,000. Express and scheduled delivery options are also available at checkout.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-accordion-item">
+                <div class="faq-question-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question-text">2.) How long will it take to receive my order?</h3>
+                    <div class="faq-toggle-icon">
+                        <svg class="arrow-down-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer-content">
+                    <p class="faq-answer-text">
+                        Delivery times vary based on your location and the product availability. Most orders are delivered within 5–10 business days. Custom-made items may take longer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-accordion-item">
+                <div class="faq-question-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question-text">3.) Can I return or exchange grocery after purchase?</h3>
+                    <div class="faq-toggle-icon">
+                        <svg class="arrow-down-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer-content">
+                    <p class="faq-answer-text">
+                        Yes, you can return eligible items within 7 days of delivery. Items must be unused and in original condition. Please check our <a href="#" class="faq-answer-link">Return Policy</a> for details.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-accordion-item">
+                <div class="faq-question-header" onclick="toggleFAQ(this)">
+                    <h3 class="faq-question-text">4.) How can I contact customer support?</h3>
+                    <div class="faq-toggle-icon">
+                        <svg class="arrow-down-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer-content">
+                    <p class="faq-answer-text">
+                        You can reach us via live chat, email at support@furnishop.com, or call our helpline at 1800-123-4567 (Mon–Sat, 10 AM – 6 PM).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Image (Fixed Position) -->
+    <div class="customer-image-container">
+        <div class="customer-image-wrapper">
+            <img src="Images/footer.png" alt="Customer Support" class="customer-photo">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-main-section">
+        <div class="footer-content-wrapper">
+            <!-- Footer Columns -->
+            <div class="footer-columns-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand-column">
+                    <div class="footer-brand-logo">
+                        <div class="logo-icon-image">
+                           <img src="Images/navlogo.png">
+                        </div>
+                        <span class="brand-name-text">The Market</span>
+                    </div>
+                    <p class="brand-tagline">Fresh groceries delivered to your doorstep</p>
+                    
+                    <div class="social-media-section">
+                        <p class="social-heading-text">Follow Us On :</p>
+                        <div class="social-icons-row">
+                            <a href="#" class="social-icon-link facebook-link" aria-label="Facebook">
+                                <svg class="social-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon-link instagram-link" aria-label="Instagram">
+                                <svg class="social-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon-link whatsapp-link" aria-label="WhatsApp">
+                                <svg class="social-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">company</h4>
+                    <a href="about.html" class="footer-link-item">About us</a>
+                    <a href="blog.html" class="footer-link-item">Blog</a>
+                    <a href="contact.html" class="footer-link-item">Contact us</a>
+                    <a href="#" class="footer-link-item">Career</a>
+                </div>
+
+                <!-- Customer Service Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">Customer service</h4>
+                    <a href="user.html" class="footer-link-item">My Account</a>
+                    <a href="#" class="footer-link-item">Track your order</a>
+                    <a href="#" class="footer-link-item">Return</a>
+                    <a href="#" class="footer-link-item">FAQ</a>
+                </div>
+
+                <!-- Our Information Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">Our information</h4>
+                    <a href="#" class="footer-link-item">Privacy</a>
+                    <a href="#" class="footer-link-item">User terms&Conditions</a>
+                    <a href="#" class="footer-link-item">Return Policy</a>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">Contact info</h4>
+                    <p class="contact-info-item">123-456-789</p>
+                    <p class="contact-info-item">example@gmail.com</p>
+                    <p class="contact-info-item">72 main street</p>
+                    <p class="contact-info-item">Mumbai-001</p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-bar">
+                <p class="copyright-text">© 2025 My market. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#" class="legal-link-item">Terms & Conditions</a>
+                    <span class="legal-link-item">|</span>
+                    <a href="#" class="legal-link-item">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //Navbar
+   // Navbar Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Get all necessary elements
+            const registerBtn = document.getElementById('navbarRegisterBtn');
+            const registerSection = document.getElementById('navbarRegisterSection');
+            const userActions = document.getElementById('navbarUserActions');
+            const menuLinks = document.getElementById('navbarMenuLinks');
+            
+            // Login Modal
+            const loginModal = document.getElementById('navbarLoginModal');
+            const loginModalClose = document.getElementById('navbarLoginModalClose');
+            const loginForm = document.getElementById('navbarLoginForm');
+            const showSignupLink = document.getElementById('navbarShowSignup');
+            
+            // Signup Modal
+            const signupModal = document.getElementById('navbarSignupModal');
+            const signupModalClose = document.getElementById('navbarSignupModalClose');
+            const signupForm = document.getElementById('navbarSignupForm');
+            const showLoginLink = document.getElementById('navbarShowLogin');
+            
+            // User Dropdown
+            const userAvatar = document.getElementById('navbarUserAvatar');
+            const userDropdown = document.getElementById('navbarUserDropdown');
+            const logoutBtn = document.getElementById('navbarLogoutBtn');
+            
+            // Notification
+            const notificationTrigger = document.getElementById('navbarNotificationTrigger');
+            const notificationDropdown = document.getElementById('navbarNotificationDropdown');
+            const notificationClose = document.getElementById('navbarNotificationClose');
+            
+            // Check if user is already logged in
+            const isLoggedIn = localStorage.getItem('navbarUserLoggedIn') === 'true';
+            
+            if (isLoggedIn) {
+                showUserInterface();
+            }
+            
+            // Open Login Modal when Register button is clicked
+            registerBtn.addEventListener('click', function() {
+                loginModal.classList.add('navbar-modal-active');
+            });
+            
+            // Close Login Modal
+            loginModalClose.addEventListener('click', function() {
+                loginModal.classList.remove('navbar-modal-active');
+            });
+            
+            // Close modal when clicking outside
+            loginModal.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.classList.remove('navbar-modal-active');
+                }
+            });
+            
+            // Handle Login Form Submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const email = this.querySelector('input[type="email"]').value;
+                const password = this.querySelector('input[type="password"]').value;
+                
+                // Basic validation
+                if (email && password) {
+                    // Store user info
+                    localStorage.setItem('navbarUserLoggedIn', 'true');
+                    localStorage.setItem('navbarUserEmail', email);
+                    
+                    // Close modal
+                    loginModal.classList.remove('navbar-modal-active');
+                    
+                    // Show user interface
+                    showUserInterface();
+                    
+                    // Show success notification
+                    showSuccessMessage('Login successful!');
+                }
+            });
+            
+            // Switch to Signup Modal
+            showSignupLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.classList.remove('navbar-modal-active');
+                signupModal.classList.add('navbar-modal-active');
+            });
+            
+            // Close Signup Modal
+            signupModalClose.addEventListener('click', function() {
+                signupModal.classList.remove('navbar-modal-active');
+            });
+            
+            // Close signup modal when clicking outside
+            signupModal.addEventListener('click', function(e) {
+                if (e.target === signupModal) {
+                    signupModal.classList.remove('navbar-modal-active');
+                }
+            });
+            
+            // Handle Signup Form Submission
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = this.querySelector('input[type="text"]').value;
+                const email = this.querySelector('input[type="email"]').value;
+                const password = this.querySelector('input[type="password"]').value;
+                
+                // Basic validation
+                if (name && email && password) {
+                    // Store user info
+                    localStorage.setItem('navbarUserLoggedIn', 'true');
+                    localStorage.setItem('navbarUserEmail', email);
+                    localStorage.setItem('navbarUserName', name);
+                    
+                    // Close modal
+                    signupModal.classList.remove('navbar-modal-active');
+                    
+                    // Show user interface
+                    showUserInterface();
+                    
+                    // Show success notification
+                    showSuccessMessage('Account created successfully!');
+                }
+            });
+            
+            // Switch to Login Modal
+            showLoginLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                signupModal.classList.remove('navbar-modal-active');
+                loginModal.classList.add('navbar-modal-active');
+            });
+            
+            // Toggle User Dropdown
+            userAvatar.addEventListener('click', function(e) {
+                e.stopPropagation();
+                userDropdown.classList.toggle('navbar-dropdown-visible');
+                // Close notification if open
+                notificationDropdown.classList.remove('navbar-notification-visible');
+            });
+            
+            // Toggle Notification Dropdown
+            notificationTrigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                notificationDropdown.classList.toggle('navbar-notification-visible');
+                // Close user dropdown if open
+                userDropdown.classList.remove('navbar-dropdown-visible');
+            });
+            
+            // Close Notification Dropdown
+            notificationClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                notificationDropdown.classList.remove('navbar-notification-visible');
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!userAvatar.contains(e.target) && !userDropdown.contains(e.target)) {
+                    userDropdown.classList.remove('navbar-dropdown-visible');
+                }
+                
+                if (!notificationTrigger.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                    notificationDropdown.classList.remove('navbar-notification-visible');
+                }
+            });
+            
+            // Prevent dropdown from closing when clicking inside
+            userDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            notificationDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Handle Logout
+            logoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Confirm logout
+                if (confirm('Are you sure you want to logout?')) {
+                    // Clear user data
+                    localStorage.removeItem('navbarUserLoggedIn');
+                    localStorage.removeItem('navbarUserEmail');
+                    localStorage.removeItem('navbarUserName');
+                    
+                    // Hide user interface and show register button
+                    hideUserInterface();
+                    
+                    // Close dropdown
+                    userDropdown.classList.remove('navbar-dropdown-visible');
+                    
+                    // Show success message
+                    showSuccessMessage('Logged out successfully!');
+                }
+            });
+            
+            // Function to show user interface after login
+            function showUserInterface() {
+                registerSection.style.display = 'none';
+                userActions.classList.add('navbar-actions-visible');
+                
+                // Show menu links
+                menuLinks.style.display = 'flex';
+                
+                // Load user profile image if available
+                const savedProfileImage = localStorage.getItem('navbarUserProfileImage');
+                if (savedProfileImage) {
+                    document.getElementById('navbarUserAvatar').src = savedProfileImage;
+                }
+            }
+            
+            // Function to hide user interface after logout
+            function hideUserInterface() {
+                registerSection.style.display = 'block';
+                userActions.classList.remove('navbar-actions-visible');
+            }
+            
+            // Function to show success message
+            function showSuccessMessage(message) {
+                const successDiv = document.createElement('div');
+                successDiv.className = 'navbar-success-toast';
+                successDiv.textContent = message;
+                successDiv.style.cssText = `
+                    position: fixed;
+                    top: 80px;
+                    right: 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                    z-index: 10000;
+                    animation: slideInRight 0.4s ease, slideOutRight 0.4s ease 2.6s;
+                `;
+                
+                document.body.appendChild(successDiv);
+                
+                setTimeout(() => {
+                    successDiv.remove();
+                }, 3000);
+            }
+            
+            // Close modals with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    loginModal.classList.remove('navbar-modal-active');
+                    signupModal.classList.remove('navbar-modal-active');
+                }
+            });
+            
+            // Social Login Buttons (Demo)
+            const socialButtons = document.querySelectorAll('.navbar-social-btn');
+            socialButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const platform = this.querySelector('i').className;
+                    let platformName = 'social';
+                    
+                    if (platform.includes('google')) platformName = 'Google';
+                    else if (platform.includes('facebook')) platformName = 'Facebook';
+                    else if (platform.includes('instagram')) platformName = 'Instagram';
+                    else if (platform.includes('twitter')) platformName = 'Twitter';
+                    
+                    alert(`${platformName} login would be implemented here`);
+                });
+            });
+            
+            // Add animation to notification items on dropdown open
+            const notificationObserver = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.target.classList.contains('navbar-notification-visible')) {
+                        const items = document.querySelectorAll('.navbar-notification-item');
+                        items.forEach((item, index) => {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateX(-20px)';
+                            setTimeout(() => {
+                                item.style.transition = 'all 0.4s ease';
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateX(0)';
+                            }, index * 100);
+                        });
+                    }
+                });
+            });
+            
+            notificationObserver.observe(notificationDropdown, {
+                attributes: true,
+                attributeFilter: ['class']
+            });
+        });
+
+        //Feature Index
+  // Navigate to category function
+        function navigateToCategory(categoryName) {
+            console.log('Navigating to category:', categoryName);
+            // In a real application, this would navigate to a category page
+            // window.location.href = `category.html?name=${categoryName}`;
+            alert(`Navigating to ${categoryName} category`);
+        }
+
+        // Shop now function
+        function shopNow(dealType) {
+            console.log('Shopping for:', dealType);
+            // In a real application, this would navigate to the deals page
+            // window.location.href = `deals.html?type=${dealType}`;
+            alert(`Shopping for ${dealType} with 25% OFF!`);
+        }
+
+        // Add scroll reveal animation (optional enhancement)
+        let observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        let observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.feature-card-item, .category-card-item, .deal-card-wrapper');
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Add keyboard navigation for accessibility
+        document.querySelectorAll('.category-card-item, .shop-now-button').forEach(element => {
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+            //Faq
+         // Toggle FAQ accordion
+        function toggleFAQ(header) {
+            const item = header.parentElement;
+            const allItems = document.querySelectorAll('.faq-accordion-item');
+            
+            // Check if this item is already active
+            const isActive = item.classList.contains('active-accordion');
+            
+            // Close all items
+            allItems.forEach(faqItem => {
+                faqItem.classList.remove('active-accordion');
+            });
+            
+            // If it wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active-accordion');
+            }
+        }
+
+        // Optional: Close FAQ when clicking outside
+        document.addEventListener('click', function(event) {
+            const faqSection = document.querySelector('.faq-items-wrapper');
+            if (!faqSection.contains(event.target)) {
+                const allItems = document.querySelectorAll('.faq-accordion-item');
+                allItems.forEach(item => {
+                    item.classList.remove('active-accordion');
+                });
+            }
+        });
+
+        // Optional: Keyboard accessibility - Enter or Space to toggle
+        document.querySelectorAll('.faq-question-header').forEach(header => {
+            header.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFAQ(this);
+                }
+            });
+            
+            // Make it focusable
+            header.setAttribute('tabindex', '0');
+        });
+
+        // Smooth scroll for footer links (optional)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

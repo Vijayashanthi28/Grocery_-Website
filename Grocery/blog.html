@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Website</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+     <!-- Top Bar -->
+    <div class="navbar-top-strip">
+        <p class="navbar-top-text">Experience shopping at its best</p>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar-main-wrapper">
+        <div class="navbar-content-container">
+            <!-- Logo -->
+            <div class="navbar-logo-section">
+                <img src="Images/navlogo.png" alt="The Market Logo" class="navbar-logo-image">
+            </div>
+
+         
+
+            <!-- Navigation Links (Hidden when not logged in on desktop, shown after login) -->
+            <ul class="navbar-menu-links" id="navbarMenuLinks">
+                <li class="navbar-menu-item"><a href="index.html" class="navbar-menu-link ">Home</a></li>
+                <li class="navbar-menu-item"><a href="shop.html" class="navbar-menu-link">Shopping</a></li>
+                <li class="navbar-menu-item"><a href="categories.html" class="navbar-menu-link">Categories</a></li>
+                <li class="navbar-menu-item"><a href="blog.html" class="navbar-menu-link navbar-link-active">Blogs</a></li>
+                <li class="navbar-menu-item"><a href="contact.html" class="navbar-menu-link">Contact us</a></li>
+                <li class="navbar-menu-item"><a href="about.html" class="navbar-menu-link">About us</a></li>
+            </ul>
+               <!-- Search Bar -->
+            <div class="navbar-search-container">
+                <input type="text" class="navbar-search-input" placeholder="Search product category">
+                <button class="navbar-search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Register Button (Shown when NOT logged in) -->
+            <div class="navbar-register-section" id="navbarRegisterSection">
+                <button class="navbar-register-btn" id="navbarRegisterBtn">Register</button>
+            </div>
+
+            <!-- User Actions (Shown when logged in) -->
+            <div class="navbar-user-actions" id="navbarUserActions">
+                <!-- User Profile -->
+                <div class="navbar-user-profile-wrapper" id="navbarUserProfileWrapper">
+                    <img src="Images/user.png" alt="User Profile" class="navbar-user-avatar" id="navbarUserAvatar">
+                    
+                    <!-- User Dropdown Menu -->
+                    <div class="navbar-user-dropdown" id="navbarUserDropdown">
+                        <div class="navbar-dropdown-header">
+                            <h3 class="navbar-dropdown-title">My Accounts</h3>
+                        </div>
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-user"></i>
+                                    <span>Personal Information</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <span>My order</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Tracking order</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Password Manager</span>
+                                </a>
+                            </li>
+                            <li class="navbar-dropdown-item">
+                                <a href="user.html" class="navbar-dropdown-link" id="navbarLogoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Wishlist Icon -->
+                <div class="navbar-icon-wrapper">
+                    <a href="like.html" class="navbar-icon-link">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+
+                <!-- Cart Icon -->
+                <div class="navbar-icon-wrapper">
+                    <a href="cart.html" class="navbar-icon-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="navbar-cart-badge">3</span>
+                    </a>
+                </div>
+
+                <!-- Notification Icon -->
+                <div class="navbar-notification-wrapper" id="navbarNotificationWrapper">
+                    <button class="navbar-icon-link navbar-notification-trigger" id="navbarNotificationTrigger">
+                        <i class="far fa-bell"></i>
+                        <span class="navbar-notification-dot"></span>
+                    </button>
+
+                    <!-- Notification Dropdown -->
+                    <div class="navbar-notification-dropdown" id="navbarNotificationDropdown">
+                        <div class="navbar-notification-header">
+                            <h3 class="navbar-notification-title">Order Updates</h3>
+                            <button class="navbar-notification-close" id="navbarNotificationClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <ul class="navbar-notification-list">
+                            <li class="navbar-notification-item">
+                                <span class="navbar-notification-bullet">•</span>
+                                <p class="navbar-notification-text">"Your order has been placed successfully! We'll notify you once it's out for delivery."</p>
+                            </li>
+                            <li class="navbar-notification-item">
+                                <span class="navbar-notification-bullet">•</span>
+                                <p class="navbar-notification-text">"Good news! Your groceries are on the way. Track your delivery in real time."</p>
+                            </li>
+                            <li class="navbar-notification-item">
+                                <span class="navbar-notification-bullet">•</span>
+                                <p class="navbar-notification-text">"Your order has been delivered. Thank you for shopping with us!"</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="navbar-modal-overlay" id="navbarLoginModal">
+        <div class="navbar-modal-container navbar-modal-login">
+            <button class="navbar-modal-close" id="navbarLoginModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="navbar-modal-title">Register Free !</h2>
+            
+            <form class="navbar-modal-form" id="navbarLoginForm">
+                <div class="navbar-form-group">
+                    <input type="email" class="navbar-form-input" placeholder="Enter your e-mail" required>
+                </div>
+                
+                <div class="navbar-form-group">
+                    <input type="password" class="navbar-form-input" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="navbar-form-submit-btn">Login</button>
+                
+                <a href="#" class="navbar-forgot-password">Forgot your password?</a>
+                
+                <div class="navbar-social-divider">
+                    <span class="navbar-divider-text">Sign Up Using</span>
+                </div>
+                
+                <div class="navbar-social-login">
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                    <button type="button" class="navbar-social-btn">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                </div>
+                
+                <p class="navbar-modal-footer">
+                    Don't have an account? 
+                    <a href="#" class="navbar-create-account" id="navbarShowSignup">Create New Account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="navbar-modal-overlay" id="navbarSignupModal">
+        <div class="navbar-modal-container navbar-modal-signup">
+            <button class="navbar-modal-close" id="navbarSignupModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="navbar-modal-title">Sign Up</h2>
+            
+            <form class="navbar-modal-form" id="navbarSignupForm">
+                <div class="navbar-form-group">
+                    <input type="text" class="navbar-form-input" placeholder="Full Name" required>
+                </div>
+                
+                <div class="navbar-form-group">
+                    <input type="email" class="navbar-form-input" placeholder="Email" required>
+                </div>
+                
+                <div class="navbar-form-group">
+                    <input type="password" class="navbar-form-input" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="navbar-form-submit-btn">Sign Up</button>
+                
+                <p class="navbar-modal-footer">
+                    Already have an account? 
+                    <a href="#" class="navbar-login-link" id="navbarShowLogin">Log in</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    
+    <section class="blog-page-section">
+        <!-- Header -->
+        <div class="blog-header-container">
+            <h1 class="blog-main-title">Our Blog</h1>
+            <p class="blog-subtitle-text">Our Latest <span class="highlight-news-text">News & Blogs</span></p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="blog-content-layout">
+            <!-- Blog Posts -->
+            <div class="blog-posts-wrapper">
+                <!-- Blog Post 1 -->
+                <article class="blog-article-card">
+                    <div class="blog-image-container">
+                        <img src="Images/a1.png" 
+                            alt="Woman shopping for groceries" 
+                            class="blog-featured-image"
+                        >
+                    </div>
+                    <h2 class="blog-article-title">Order Picking: Meaning, Methods & Best Choice for Your Grocery</h2>
+                    <p class="blog-publish-date">June 20 2025</p>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-article-card">
+                    <div class="blog-image-container">
+                        <img 
+                            src="Images/bl 1.png" 
+                            alt="Sale sign in retail store" 
+                            class="blog-featured-image"
+                        >
+                    </div>
+                    <h2 class="blog-article-title">What is Assortment Planning in Retail & How to Optimize It?</h2>
+                    <p class="blog-publish-date">May 12 2025</p>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="blog-sidebar-container">
+                <!-- Search Widget -->
+                <div class="sidebar-search-widget">
+                    <h3 class="search-widget-title">Search</h3>
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            class="search-text-field" 
+                            placeholder="Search"
+                        >
+                        <button class="search-icon-button" aria-label="Search">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Popular Category Widget -->
+                <div class="sidebar-category-widget">
+                    <h3 class="category-widget-title">Poplar Category</h3>
+                    <div class="category-list-container">
+                        <button class="category-button-item">Shopping Tips</button>
+                        <button class="category-button-item">Grocery</button>
+                        <button class="category-button-item">Fruits&Vegatables</button>
+                        <button class="category-button-item">Bakery Products</button>
+                    </div>
+                </div>
+
+                <!-- Recent Post Widget -->
+                <div class="sidebar-recent-widget">
+                    <h3 class="recent-widget-title">Recent Post</h3>
+                    <div class="recent-posts-list">
+                        <!-- Recent Post 1 -->
+                        <div class="recent-post-item">
+                            <div class="recent-post-thumbnail">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?w=200" 
+                                    alt="Grocery shopping" 
+                                    class="recent-post-image"
+                                >
+                            </div>
+                            <div class="recent-post-details">
+                                <h4 class="recent-post-title">Why is Omnichannel Grocery Changing the Way Your Customers Shop</h4>
+                                <p class="recent-post-date">10 july 2024</p>
+                            </div>
+                        </div>
+
+                        <!-- Recent Post 2 -->
+                        <div class="recent-post-item">
+                            <div class="recent-post-thumbnail">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=200" 
+                                    alt="Order management" 
+                                    class="recent-post-image"
+                                >
+                            </div>
+                            <div class="recent-post-details">
+                                <h4 class="recent-post-title">What Is Distributed Order Management (Dom) & How Does It Work?</h4>
+                                <p class="recent-post-date">12 August 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promotional Banner -->
+                <div class="sidebar-promo-banner">
+                    <img 
+                        src="Images/bl 2.png" 
+                        alt="Sale promotion" 
+                        class="promo-banner-image"
+                    >
+                    <p class="promo-banner-text">Sale upto 20%</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+     <!-- Customer Image (Fixed Position) -->
+    <div class="customer-image-container">
+        <div class="customer-image-wrapper">
+            <img src="Images/footer.png" alt="Customer Support" class="customer-photo">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-main-section">
+        <div class="footer-content-wrapper">
+            <!-- Footer Columns -->
+            <div class="footer-columns-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand-column">
+                    <div class="footer-brand-logo">
+                        <div class="logo-icon-image">
+                           <img src="Images/navlogo.png">
+                        </div>
+                        <span class="brand-name-text">The Market</span>
+                    </div>
+                    <p class="brand-tagline">Fresh groceries delivered to your doorstep</p>
+                    
+                    <div class="social-media-section">
+                        <p class="social-heading-text">Follow Us On :</p>
+                        <div class="social-icons-row">
+                            <a href="#" class="social-icon-link facebook-link" aria-label="Facebook">
+                                <svg class="social-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon-link instagram-link" aria-label="Instagram">
+                                <svg class="social-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon-link whatsapp-link" aria-label="WhatsApp">
+                                <svg class="social-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">company</h4>
+                    <a href="about.html" class="footer-link-item">About us</a>
+                    <a href="blog.html" class="footer-link-item">Blog</a>
+                    <a href="contact.html" class="footer-link-item">Contact us</a>
+                    <a href="#" class="footer-link-item">Career</a>
+                </div>
+
+                <!-- Customer Service Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">Customer service</h4>
+                    <a href="user.html" class="footer-link-item">My Account</a>
+                    <a href="#" class="footer-link-item">Track your order</a>
+                    <a href="#" class="footer-link-item">Return</a>
+                    <a href="#" class="footer-link-item">FAQ</a>
+                </div>
+
+                <!-- Our Information Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">Our information</h4>
+                    <a href="#" class="footer-link-item">Privacy</a>
+                    <a href="#" class="footer-link-item">User terms&Conditions</a>
+                    <a href="#" class="footer-link-item">Return Policy</a>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-links-column">
+                    <h4 class="footer-column-heading">Contact info</h4>
+                    <p class="contact-info-item">123-456-789</p>
+                    <p class="contact-info-item">example@gmail.com</p>
+                    <p class="contact-info-item">72 main street</p>
+                    <p class="contact-info-item">Mumbai-001</p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-bar">
+                <p class="copyright-text">© 2025 My market. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#" class="legal-link-item">Terms & Conditions</a>
+                    <span class="legal-link-item">|</span>
+                    <a href="#" class="legal-link-item">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
